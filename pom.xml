@@ -3,42 +3,44 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.zuihou</groupId>
-    <artifactId>zuihou-commons</artifactId>
-    <version>2.3</version>
+    <groupId>com.tangyh.basic</groupId>
+    <artifactId>lamp-util</artifactId>
+    <version>3.0.2</version>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
-    <description>zuihou项目公共模块</description>
-    <url>https://github.com/zuihou/zuihou-commons</url>
+    <description>lamp项目公共模块</description>
+    <url>https://github.com/zuihou/lamp-util</url>
 
     <modules>
-        <module>zuihou-core</module>
-        <module>zuihou-boot</module>
-        <module>zuihou-databases</module>
-        <module>zuihou-log-starter</module>
-        <module>zuihou-swagger2-starter</module>
-        <module>zuihou-validator-starter</module>
-        <module>zuihou-security-starter</module>
-        <module>zuihou-jwt-starter</module>
-        <module>zuihou-dozer-starter</module>
-        <module>zuihou-xss-starter</module>
-        <module>zuihou-cloud-starter</module>
-        <module>zuihou-j2cache-starter</module>
-        <module>zuihou-cache-starter</module>
-        <module>zuihou-mq-starter</module>
-        <module>zuihou-zipkin-client-starter</module>
-        <module>zuihou-scan-starter</module>
-        <module>zuihou-injection-starter</module>
+        <module>lamp-dependencies</module>
+        <module>lamp-annotation</module>
+        <module>lamp-core</module>
+        <module>lamp-boot-util</module>
+        <module>lamp-databases</module>
+        <module>lamp-log-starter</module>
+        <module>lamp-swagger2-starter</module>
+        <module>lamp-validator-starter</module>
+        <module>lamp-security-starter</module>
+        <module>lamp-jwt-starter</module>
+        <module>lamp-dozer-starter</module>
+        <module>lamp-xss-starter</module>
+        <module>lamp-cloud-starter</module>
+        <module>lamp-cache-starter</module>
+        <module>lamp-mq-starter</module>
+        <module>lamp-zipkin-client-starter</module>
+        <module>lamp-injection-starter</module>
+        <module>lamp-uid</module>
     </modules>
     <properties>
+        <lamp-dependencies.version>3.0.2</lamp-dependencies.version>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-        <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
         <dockerfile-maven-plugin.version>1.4.12</dockerfile-maven-plugin.version>
-        <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
     </properties>
 
@@ -55,7 +57,7 @@
         <developer>
             <id>zuihou</id>
             <name>zuihou</name>
-            <email>244387066@qq.com</email>
+            <email>306479353@qq.com</email>
             <roles>
                 <role>Java Development Engineer</role>
             </roles>
@@ -63,9 +65,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git@github.com:zuihou/zuihou-commons.git</connection>
-        <developerConnection>scm:git@github.com:zuihou/zuihou-commons.git</developerConnection>
-        <url>git@github.com:zuihou/zuihou-commons.git</url>
+        <connection>scm:git@github.com:zuihou/lamp-util.git</connection>
+        <developerConnection>scm:git@github.com:zuihou/lamp-util.git</developerConnection>
+        <url>git@github.com:zuihou/lamp-util.git</url>
     </scm>
 
     <distributionManagement>
@@ -82,41 +84,51 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.github.zuihou</groupId>
-                <artifactId>zuihou-dependencies</artifactId>
-                <version>2.3</version>
+                <groupId>com.tangyh.basic</groupId>
+                <artifactId>lamp-dependencies</artifactId>
+                <version>${lamp-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
             <dependency>
-                <groupId>com.github.zuihou</groupId>
-                <artifactId>zuihou-core</artifactId>
+                <groupId>com.tangyh.basic</groupId>
+                <artifactId>lamp-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.zuihou</groupId>
-                <artifactId>zuihou-boot</artifactId>
+                <groupId>com.tangyh.basic</groupId>
+                <artifactId>lamp-annotation</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.zuihou</groupId>
-                <artifactId>zuihou-injection-starter</artifactId>
+                <groupId>com.tangyh.basic</groupId>
+                <artifactId>lamp-uid</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.zuihou</groupId>
-                <artifactId>zuihou-j2cache-starter</artifactId>
+                <groupId>com.tangyh.basic</groupId>
+                <artifactId>lamp-boot-util</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.zuihou</groupId>
-                <artifactId>zuihou-databases</artifactId>
+                <groupId>com.tangyh.basic</groupId>
+                <artifactId>lamp-injection-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.zuihou</groupId>
-                <artifactId>zuihou-mq-starter</artifactId>
+                <groupId>com.tangyh.basic</groupId>
+                <artifactId>lamp-databases</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tangyh.basic</groupId>
+                <artifactId>lamp-cache-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tangyh.basic</groupId>
+                <artifactId>lamp-mq-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -178,6 +190,8 @@
                         <source>${java.version}</source>
                         <target>${java.version}</target>
                         <encoding>${project.build.sourceEncoding}</encoding>
+                        <!--                        <compilerArgs>-Xlint:deprecation</compilerArgs>-->
+                        <!--                        <compilerArgs>-Xlint:unchecked</compilerArgs>-->
                     </configuration>
                 </plugin>
                 <!-- resources资源插件 -->
@@ -255,16 +269,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
             </plugin>
-            <!-- java文档插件 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-            </plugin>
-            <!--配置生成源码包 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-            </plugin>
+
             <!-- 一键更新子模块版本号 -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -276,72 +281,4 @@
         </plugins>
     </build>
 
-    <profiles>
-        <profile>
-            <!-- 打包的 -P参数 -->
-            <id>release</id>
-            <build>
-                <plugins>
-                    <!-- Source -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <!-- Javadoc -->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <!--                        <configuration>-->
-                        <!--                            <additionalparam>-Xdoclint:none</additionalparam>-->
-                        <!--                        </configuration>-->
-                        <!--                        <executions>-->
-                        <!--                            <execution>-->
-                        <!--                                <phase>package</phase>-->
-                        <!--                                <goals>-->
-                        <!--                                    <goal>jar</goal>-->
-                        <!--                                </goals>-->
-                        <!--                            </execution>-->
-                        <!--                        </executions>-->
-                    </plugin>
-                    <!-- GPG  打包插件-->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-            <distributionManagement>
-                <snapshotRepository>
-                    <!-- 这里的id和settings.xml中刚才配置的server中的id一致即可 -->
-                    <id>oss</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-                <repository>
-                    <!-- 这里的id和settings.xml中刚才配置的server中的id一致即可 -->
-                    <id>oss</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-    </profiles>
 </project>
